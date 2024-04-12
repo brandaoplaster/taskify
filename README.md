@@ -1,24 +1,24 @@
-# README
+# Taskify :scroll:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+taskfy is a task management application, built with Ruby on Rails and Stimulus, offers a secure platform with login features for users. Furthermore, it provides complete CRUD (Create, Read, Update, Delete) functionalities for tasks, allowing users to create, view, update and delete their tasks efficiently.
 
-Things you may want to cover:
+## Functionalities
 
-* Ruby version
+- Task List
+- Create Task
+- Edit Task
+- Delete Task
 
-* System dependencies
+## Stack
 
-* Configuration
+- Ruby on Rails
+- Stimulus
+- Hotwire
 
-* Database creation
+## Authors
 
-* Database initialization
+- [brandaoplaster](https://github.com/brandaoplaster)
 
-* How to run the test suite
+## License
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

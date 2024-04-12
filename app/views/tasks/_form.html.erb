@@ -1,7 +1,11 @@
-<%= form_with(model: task, class: "mb-7") do |form| %>
+<%= form_with(model: task, class: "max-w-sm max-auto") do |form| %>
+  <div class="mb-5">
+    <%= form.text_field :title, placeholder: "Title task",
+    class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+  </div>
   <div class="mb-5">
     <%= form.text_field :description, placeholder: "Add new task",
-                        class: "inline-block w-96 px-3 py-2 mt-2 shadow rounded-md border border-gray-200 outline-none" %>
-    <%= form.submit "Save", class: "btn py-2 ml-2 bg-blue-600 text-white" %>
+                        class: "block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
   </div>
+    <%= form.submit "Save", class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" %>
 <% end %>

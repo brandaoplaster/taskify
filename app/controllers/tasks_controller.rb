@@ -18,6 +18,13 @@ class TasksController < ApplicationController
     end
   end
 
+  def toggle
+    @task = Task.find(params[:id])
+    @task.update(status: params[:status])
+
+    render json: { message: "Success" }
+  end
+
   private
 
   def task_params

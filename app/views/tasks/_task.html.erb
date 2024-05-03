@@ -1,24 +1,19 @@
 <%= form_with(model: task, class:"text-lg inline-block my-3 w-72") do |form| %>
-<tbody>
-  <tr class="bg-white border-b dark:bg-gray-800  hover:bg-gray-50 dark:hover:bg-gray-600">
-    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-      <%= task.title %>
-    </th>
-    <td class="px-6 py-4">
-      <%= task.description %>
-    </td>
-    <td class="px-6 py-4">
-      <%= form.check_box :status,
-                       data: {
-                         id: task.id,
-                         action: "tasks#toggle"
-                       },
-                       class: "mr-2 align-middle bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-5 w-5 rounded checked:bg-green-500" %>
-    </td>
-    <td class="px-6 py-4 text-right">
-      <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-    </td>
-  </tr>
-</tbody>
-
+  <tbody>
+    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+      <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+        <%= task.title %>
+      </th>
+      <th class="px-6 py-4">
+        <%= form.check_box :status, data: { id: task.id, action: "tasks#toggle" },
+          class: "mr-2 align-middle bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-5 w-5 rounded checked:bg-green-500"
+          %>
+      </th>
+      <th class="px-6 py-4 text-right">
+        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+          Edit
+        </a>
+      </th>
+    </tr>
+  </tbody>
 <% end %>

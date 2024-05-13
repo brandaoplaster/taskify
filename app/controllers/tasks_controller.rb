@@ -2,7 +2,7 @@
 
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all
+    @tasks = current_user.tasks.all
     @task = Task.new
   end
 
@@ -28,6 +28,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :description, :category_id)
+    params.require(:task).permit(:title, :description, :category_id).merge(user: current_user)
   end
 end

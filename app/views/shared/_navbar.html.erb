@@ -42,17 +42,19 @@
           </svg>
         </button>
 
-        <div data-controller="dropdown" data-mini-dropdown-open-value="false">
-          <button class="text-white" role="button" tabindex=0 data-mini-dropdown-target="openButton" data-action="mini-dropdown#openDropdown">
-            Click to Open
-          </button>
-          <button class="text-white" role="button" tabindex=0 data-mini-dropdown-target="closeButton" data-action="mini-dropdown#closeDropdown" >
-            Click to Close
-          </button>
-          <div class="text-white" data-mini-dropdown-target="dropdownContent">
-            Dropdown content
+        <div data-controller="dropdown" data-dropdown-open-value="false" data-dropdown-opened-class="bg-slate-300">
+          <div role="button" data-dropdown-target="openButton" data-action="mousemove->dropdown#openDropdown">
+            open ⬇️
           </div>
-       </div>
+          <span role="button" data-dropdown-target="closeButton" data-action="mouseout->dropdown#closeDropdown">
+            close ⬆️
+          </span >
+
+          <div data-dropdown-target="dropdownContent" class="fixed p-4 rounded-md">
+            <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Tasks</a>
+            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Categories</a>
+          </div>
+        </div>
 
       </div>
     </div>

@@ -1,53 +1,24 @@
 import { Controller } from "@hotwired/stimulus";
-// Minimalistic dropdown toggle controller.
-// Click to open/close dropdown.
-// When clicked, dropdown icon can be changed.
-// Dropdown can be open by default, if you set data-mini-dropdown-open-value="true" (closed by default if not set)
 
 export default class extends Controller {
-  static targets = ["dropdownContent", "openButton", "closeButton", "active"];
-  static values = { open: Boolean };
-  static classes = ["opened"];
+  static targets = ["dropdown"];
+  static values = { isOpen: { type: Boolean, default: false } };
 
   connect() {
-    if (this.openValue) {
-      this.openDropdown();
-    } else {
-      this.closeDropdown();
-    }
-    // this.dropdownContentTarget.hidden = true
-    // this.closeButtonTarget.hidden = true
-    console.log("hello");
+    console.log("Dropdown controller connected");
   }
 
-  toggleDropdown() {
-    if (this.dropdownContentTarget.hidden == true) {
-      this.openDropdown();
-    } else {
-      this.closeDropdown();
-    }
+  toggle() {
+    this.isOpenValue ? this.hide() : this.show();
+    this.isOpenValue = !this.isOpenValue;
   }
 
-  openDropdown() {
-    console.log("open");
-    this.dropdownContentTarget.hidden = false;
-    try {
-      this.openButtonTarget.hidden = true;
-      this.closeButtonTarget.hidden = false;
-    } catch {}
-    try {
-      this.activeTarget.classList.add(this.openedClass);
-    } catch {}
+  show() {
+    console.log(this.dropdownTarget.classList);
+    this.dropdownTarget.classList.remove("hidden");
   }
 
-  closeDropdown() {
-    this.dropdownContentTarget.hidden = true;
-    try {
-      this.openButtonTarget.hidden = false;
-      this.closeButtonTarget.hidden = true;
-    } catch {}
-    try {
-      this.activeTarget.classList.remove(this.openedClass);
-    } catch {}
+  hide() {
+    this.dropdownTarget.classList.add("hidden");
   }
 }
